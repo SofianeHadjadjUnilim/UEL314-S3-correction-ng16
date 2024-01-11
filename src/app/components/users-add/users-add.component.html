@@ -1,0 +1,28 @@
+<div>
+  <h4>Add User</h4>
+    <form>
+        <div>
+            <label for="firstname">Firstname</label>
+            <input
+              type="text"
+              id="firstname"
+              required
+              [(ngModel)]="users.firstname"
+              name="firstname"
+            />
+          </div>
+    
+          <div>
+            <label for="lastname">lastname</label>
+            <input
+              type="text"
+              id="lastname"
+              required
+              [(ngModel)]="users.lastname"
+              name="lastname"
+            />
+          </div>
+    
+          <button (click)="addUser()">Submit</button>
+    </form>
+</div>

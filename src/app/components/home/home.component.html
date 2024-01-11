@@ -1,0 +1,17 @@
+<h1>UE3SD24</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/users" routerLinkActive="active">Users List</a></li>
+    <li>
+      <a routerLink="/user/{{userId.value}}" routerLinkActive="active">Get One User By Id : </a>
+      <select (change)="onChange($event)" #userId> 
+        <option *ngFor="let id of listIds" [value]="id">{{id}}</option>
+      </select>
+    </li>
+    <li><a routerLink="/createuser" routerLinkActive="active">Create User</a></li>
+    <li><a routerLink="/updateuser" routerLinkActive="active">Update User</a></li>
+    <li><a routerLink="/deleteuser" routerLinkActive="active">Delete User</a></li>
+  </ul>
+</nav>
+

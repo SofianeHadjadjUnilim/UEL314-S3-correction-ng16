@@ -1,0 +1,12 @@
+<div>
+    <h4>Remove User</h4>
+
+    <form>
+        <div *ngFor="let user of users; let i = index">
+            <input type="hidden" [id]="'delete-' + user.id" [value]="user.id" name="delete" #delete>
+            <span><strong>{{ user.firstname }}</strong> {{ user.lastname }}</span>
+            <button style="display: inline; margin-left: 20px;" type="submit" (click)="deleteUser(delete.value)">Supprimer</button>
+            <br>
+        </div>
+    </form>   
+</div>

@@ -1,0 +1,44 @@
+<div>
+  <h4>Update User</h4>
+
+  <div *ngFor="let user of users; let i = index">
+
+      <form (submit)="updateUser(user.id, firstname.value, lastname.value)">
+      
+          <div>
+              <input type="hidden" [value]="user.id" name="update" #update>
+              <span> <strong>{{ user.firstname }}</strong>  {{ user.lastname }}</span>
+          </div>
+
+          <div>
+              <label for="firstname-{{i}}">Firstname</label>
+              <input
+                type="text"
+                [id]="'firstname-' + i"
+                [name]="'firstname-' + i"
+                [value]="user.firstname"
+                [placeholder]="user.firstname"
+                #firstname
+              />
+          </div>
+      
+          <div>
+              <label for="lastname-{{i}}">Lastname</label>
+              <input
+                type="text"
+                [id]="'lastname-' + i"
+                [name]="'lastname-' + i"
+                [value]="user.lastname"
+                [placeholder]="user.lastname"
+                #lastname
+              />
+          </div>
+
+          <button style="display: inline; margin-left: 20px;" type="submit">Mettre à jour</button>
+          <br>
+          <p>##########</p>
+          <br>
+      
+      </form>   
+  </div>
+</div>
